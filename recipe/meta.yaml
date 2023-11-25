@@ -1,5 +1,5 @@
 {% set name = "robocorp-tasks" %}
-{% set version = "2.4.2" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robocorp_tasks-{{ version }}.tar.gz
-  sha256: f53efcd8052e7f2b7fa56321b14dab33b47eefd15921fa84bd4a70c4a1b60133
+  sha256: 1504df22c869bc233d4666fadf3956a63e92e2e5fda5ad5cdf8800fcddb18d1a
 
 build:
   noarch: python
@@ -25,6 +25,7 @@ requirements:
     - python >=3.9.0,<4.0.0
     - robocorp-log >=2.4,<3
     - psutil >=5.9.0,<6.0.0
+    - docstring_parser_fork >=0.0.5,<0.0.6
 
 test:
   imports:
