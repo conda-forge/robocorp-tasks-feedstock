@@ -1,5 +1,5 @@
 {% set name = "robocorp-tasks" %}
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robocorp_tasks-{{ version }}.tar.gz
-  sha256: 295936fa8e3344e4d83e7a28481e1193dc4af7aea8ff1af964920525221d8284
+  sha256: 32dc830d8a587206c340ff82f49c9e25bd956302264e2049b32c26fae15f26b1
 
 build:
   noarch: python
