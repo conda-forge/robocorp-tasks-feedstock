@@ -1,6 +1,6 @@
-{% set python_min = '3.9.0' %}
+{% set python_min = "3.9.0" %}
 {% set name = "robocorp-tasks" %}
-{% set version = "3.1.2" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robocorp_tasks-{{ version }}.tar.gz
-  sha256: bc0b45e81a6e3b1a0dd4df1b2328c2b5d5ce1cb59f779cdf6fa4b8cd8cabc40a
+  sha256: dbb7567539f04e60e91e2bf0a0a28ad4c545341dd83c8437b97bda0624eaad6f
 
 build:
   noarch: python
@@ -16,7 +16,7 @@ build:
     - echo f | xcopy /f /y /S %RECIPE_DIR%\README.md %SRC_DIR%\README.md  # [win]
     - cp -R {{ RECIPE_DIR }}/README.md {{ SRC_DIR }}/README.md  # [unix]
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 requirements:
   host:
     - python {{ python_min }}
@@ -24,10 +24,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0.0
-    - robocorp-log >=2.4,<3
-    - psutil >=5.0.0,<6.0.0
-    - docstring_parser_fork >=0.0.5,<0.0.6
-    - packaging >=24.0.0,<25.0.0
+    - robocorp-log >=2.4,<4
+    - psutil <6.0,>=5.0
+    - docstring_parser_fork <0.0.6,>=0.0.5
+    - packaging <25.0,>=24.0
 
 test:
   imports:
