@@ -1,6 +1,7 @@
 {% set python_min = "3.9.0" %}
 {% set name = "robocorp-tasks" %}
 {% set version = "4.0.0" %}
+{% set python_min = "3.9.2" %}
 
 package:
   name: {{ name|lower }}
