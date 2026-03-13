@@ -1,7 +1,6 @@
-{% set python_min = "3.9.0" %}
 {% set name = "robocorp-tasks" %}
-{% set version = "4.0.0" %}
-{% set python_min = "3.9.2" %}
+{% set version = "4.1.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robocorp_tasks-{{ version }}.tar.gz
-  sha256: dbb7567539f04e60e91e2bf0a0a28ad4c545341dd83c8437b97bda0624eaad6f
+  sha256: 4780880cba1b265dc8e436d0e5dac13e15f957777c80e169a18e91fcd6930866
 
 build:
   noarch: python
@@ -26,9 +25,9 @@ requirements:
   run:
     - python >={{ python_min }},<4.0.0
     - robocorp-log >=2.4,<4
-    - psutil <6.0,>=5.0
-    - docstring_parser_fork <0.0.6,>=0.0.5
-    - packaging <25.0,>=24.0
+    - psutil >=5.0.0,<6.0.0
+    - docstring_parser_fork >=0.0.5,<0.0.6
+    - packaging >=24.0.0,<25.0.0
 
 test:
   imports:
